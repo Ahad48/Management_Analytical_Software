@@ -20,6 +20,8 @@ from login import views as user_views
 from django.conf import settings
 from django.contrib.auth import views as auth_views
 from hr import views as hr_views
+from operations import views as op_views
+from marketing import views as mk_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -27,5 +29,8 @@ urlpatterns = [
     path("sign_in/", auth_views.LoginView.as_view(template_name="login/sign_in.html"), name='sign_in'),
     path('dashboard/', user_views.dashboard, name='dashboard'),
     path("Add_Employee_Skill/", hr_views.AddEmployeeSkillScoreView.as_view(), name="add_employee_skill"),
-    path("trial/", hr_views.generate_skill_chart, name='trial'),
+    path("view_skill_chart/", hr_views.generate_skill_chart, name='view_skill_chart'),
+    path("show_gantt_chart/", op_views.show_gantt_chart, name='show_gantt_chart'),
+    path("add_emp_form/", hr_views.AddEmployeesView.as_view(), name="add_emp_form"),
+    path("sentiment/", mk_views.get_company, name="sentiment"),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

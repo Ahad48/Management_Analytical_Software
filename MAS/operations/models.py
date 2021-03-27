@@ -14,15 +14,16 @@ class Project(models.Model):
         return self.project_id
 
 
-Status = [("complete", "Complete"), ("incomplete", "Incomplete"), ("delayed", "Delayed"), ("cancelled", "Cancelled")]
+Status = [("complete", "Complete"), ("incomplete", "Incomplete"), ("delayed", "Delayed"),
+          ("not started", "Not Started")]
 
 
 class Job(models.Model):
     Project_id = models.ForeignKey(Project, on_delete=models.CASCADE, default="")
-    job_name = models.CharField(max_length=30)
+    Task = models.CharField(max_length=30)
     job_desc = models.TextField()
-    start_date = models.DateField()
-    end_date = models.DateField()
+    Start = models.DateField()
+    Finish = models.DateField()
     status = models.CharField(max_length=50, default="", choices=Status)
 
 

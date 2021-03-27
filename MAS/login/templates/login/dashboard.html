@@ -31,11 +31,11 @@
 
             <!-- LOGO -->
             <div class="topbar-left">
-                <a href="dashboard.html" class="logo">
+                <a href="/dashboard/" class="logo">
                     <!--span>
                         <img src="assets/images/logo-sm.png" alt="logo-small" class="logo-sm">
                     </span-->
-                    <a href="dashboard/analytics-index.html" class="logo logo-admin"><img src="/static/assets/images/logo-sm.png" height="55" alt="logo" class="auth-logo"></a>
+                    <a href="/dashboard/" class="logo logo-admin"><img src="/static/assets/images/logo-sm.png" height="55" alt="logo" class="auth-logo"></a>
                 </a>
             </div>
             <!--end logo-->
@@ -109,7 +109,7 @@
         <div class="left-sidenav">
             <ul class="metismenu left-sidenav-menu">
                 <li>
-                    <a href="dashboard.html"><i class="ti-bar-chart"></i><span>Dashboard</span></a>
+                    <a href="/dashboard/"><i class="ti-bar-chart"></i><span>Dashboard</span></a>
                     <!-- 
                     <ul class="nav-second-level" aria-expanded="false">
                         <li class="nav-item"><a class="nav-link" href="dashboard/analytics-index.html"><i class="ti-control-record"></i>Analytics</a></li>
@@ -130,17 +130,17 @@
                 </li>                 
 
                 <li>    
-                    <a href="/Add_Employee_Skill/"><i class="ti-crown"></i><span>Human Resource</span><span class="menu-arrow"><i class="mdi mdi-chevron-right"></i></span></a>
+                    <a href="#"><i class="ti-crown"></i><span>Human Resource</span><span class="menu-arrow"><i class="mdi mdi-chevron-right"></i></span></a>
                     <ul class="nav-second-level" aria-expanded="false">
                         <li>
-                            <a href="javascript: void(0);"><i class="ti-control-record"></i>View Employee List</a>
-                        </li>  
+                            <a href="/add_emp_form/"><i class="ti-control-record"></i>Add Employee</a>
+                        </li>
                         <li>
-                            <a href="javascript: void(0);"><i class="ti-control-record"></i>Sentiment Analysis</a>
-                        </li> 
-                        <!--li>
-                            <a href="Add-Meds.html"><i class="ti-control-record"></i>Add Medicine</a>
-                        </li-->  
+                            <a href="/Add_Employee_Skill/"><i class="ti-control-record"></i>Add Employee Skill</a>
+                        </li>
+                        <li>
+                            <a href="/view_skill_chart/"><i class="ti-control-record"></i>Skill Chart</a>
+                        </li>
                     </ul>                        
                 </li>
 
@@ -152,7 +152,7 @@
                     </ul-->
                 </li>
                 <li>   
-                    <a href="operations.html"><i class="ti-crown"></i><span>Operations</span><span class="menu-arrow"><i class="mdi mdi-chevron-right"></i></span></a>
+                    <a href="/show_gantt_chart/"><i class="ti-crown"></i><span>Operations</span><span class="menu-arrow"><i class="mdi mdi-chevron-right"></i></span></a>
                      <!--ul class="nav-second-level mm-collapse" aria-expanded="false">
                         <li class="nav-item"><a class="nav-link" href="staff-page.html"><i class="ti-control-record"></i>View all Staff </a></li>
                         <li class="nav-item"><a class="nav-link" href="add-staff.html"><i class="ti-control-record"></i>Add staff </a></li>
@@ -199,7 +199,7 @@
                                             <h3 class="my-3">
                                                 <span class="input-group-append ml-3">
                                                   
-                                                    <input type="button" value="View" class="btn btn-gradient-primary" onclick="location.href='finance.html'"></input>
+                                                    <input type="button" value="View" class="btn btn-gradient-primary" onclick="location.href='finance.html'">
                                                     
                                                 </span>
                                             </h3>
@@ -244,20 +244,20 @@
                                         <div>
                                             <p class="text-dark font-weight-semibold font-14">Tasks</p>
                                             <h3 class="my-3">15</h3>
-                                            <!--<p class="mb-0 text-truncate"><span class="text-success"><i class="mdi mdi-trending-up"></i>10.5%</span> Completions Weekly</p>--
+                                            <p class="mb-0 text-truncate"><span class="text-success"><i class="mdi mdi-trending-up"></i>10.5%</span> Completions Weekly</p>--
                                         </div>
                                         <div class="justify-content-between">
                                             <br>
-                                            <!--<p class="text-white font-weight-semibold font-13">a</p>--
+                                            <p class="text-white font-weight-semibold font-13">a</p>--
                                             <h3 class="my-3">
                                                 <span class="input-group-append ml-3">
                                                     <input type="button" value="View List" class="btn btn-gradient-primary" onclick="location.href='important-tasks-part-2.html'"></input>
                                                 </span>
                                             </h3>
                                         </div>
-                                        <!--div class="justify-content-between">
+                                        <div class="justify-content-between">
                                             <br>
-                                            <!--<p class="text-white font-weight-semibold font-13">a</p>--
+                                            <p class="text-white font-weight-semibold font-13">a</p>--
                                             <h3 class="my-3">
                                                 <span class="input-group-append ml-3">
                                                     <input type="button" value="Add Task" class="btn btn-gradient-primary" onclick="location.href='add-imp-task.html'"></input>
@@ -268,10 +268,10 @@
                                             <i class="dripicons-wallet report-main-icon bg-soft-warning text-warning"></i>
                                         </div>--
                                     </div>
-                                </div><!--end card-body--
-                            </div><!--end card--
-                        </div> <!--end col-->                            
-                    </div><!--end row-->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     <div class="row justify-content-center">
                         <div class="col-md-6 col-lg-6">
                             <div class="card report-card">
@@ -279,7 +279,7 @@
                                     <div class="d-flex justify-content-between">
                                         <div>
                                             <p class="text-dark font-weight-semibold font-20">Marketing</p>
-                                            <!--<h3 class="my-3">24</h3>-->
+                                            <h3 class="my-3">24</h3>-->
                                             <!--<p class="mb-0 text-truncate"><span class="text-success"><i class="mdi mdi-trending-up"></i>8.5%</span> New Sessions Today</p>-->
                                         </div>
                                         <div class="justify-content-between">
@@ -287,7 +287,7 @@
                                             <!--<p class="text-white font-weight-semibold font-13">a</p>-->
                                             <h3 class="my-3">
                                                 <span class="input-group-append ml-3">
-                                                    <input type="button" value="View" class="btn btn-gradient-primary" onclick="location.href='marketing.html'"></input>
+                                                    <input type="button" value="View" class="btn btn-gradient-primary" onclick="location.href='marketing.html'">
                                                 </span>
                                             </h3>
                                         </div>
@@ -312,7 +312,7 @@
                                             <!--<p class="text-white font-weight-semibold font-13"></p>-->
                                             <h3 class="my-3">
                                                 <span class="input-group-append ml-3">
-                                                    <input type="button" value="View" class="btn btn-gradient-primary" onclick="location.href='operations.html'"></input>
+                                                    <input type="button" value="View" class="btn btn-gradient-primary" onclick="location.href='/show_gantt_chart/'">
                                                 </span>
                                             </h3>
                                         </div>
@@ -331,20 +331,20 @@
                                         <div>
                                             <p class="text-dark font-weight-semibold font-14">Tasks</p>
                                             <h3 class="my-3">15</h3>
-                                            <!--<p class="mb-0 text-truncate"><span class="text-success"><i class="mdi mdi-trending-up"></i>10.5%</span> Completions Weekly</p>
+                                            <p class="mb-0 text-truncate"><span class="text-success"><i class="mdi mdi-trending-up"></i>10.5%</span> Completions Weekly</p>
                                         </div>
                                         <div class="justify-content-between">
                                             <br>
-                                            <!--<p class="text-white font-weight-semibold font-13">a</p>--
+                                            <p class="text-white font-weight-semibold font-13">a</p>--
                                             <h3 class="my-3">
                                                 <span class="input-group-append ml-3">
                                                     <input type="button" value="View List" class="btn btn-gradient-primary" onclick="location.href='important-tasks-part-2.html'"></input>
                                                 </span>
                                             </h3>
                                         </div>
-                                        <!--div class="justify-content-between">
+                                        <div class="justify-content-between">
                                             <br>
-                                            <!--<p class="text-white font-weight-semibold font-13">a</p>--
+                                            <p class="text-white font-weight-semibold font-13">a</p>--
                                             <h3 class="my-3">
                                                 <span class="input-group-append ml-3">
                                                     <input type="button" value="Add Task" class="btn btn-gradient-primary" onclick="location.href='add-imp-task.html'"></input>
@@ -355,8 +355,8 @@
                                             <i class="dripicons-wallet report-main-icon bg-soft-warning text-warning"></i>
                                         </div>--
                                     </div>
-                                </div><!--end card-body--
-                            </div><!--end card--
+                                </div>
+                            </div>
                         </div>--> <!--end col-->                            
                     </div><!--end row-->
                     
