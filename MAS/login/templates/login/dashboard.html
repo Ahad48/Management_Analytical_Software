@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8" />
+        <title>Dashboard</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta content="Connecting you to the best doctors around the world" name="description" />
+        <meta content="" name="author" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+        <!-- App favicon -->
+        <link rel="shortcut icon" href="/static/assets/images/favicon.ico">
+
+        <!-- jvectormap -->
+        <link href="/static/plugins/jvectormap/jquery-jvectormap-2.0.2.css" rel="stylesheet">
+
+        <!-- App css -->
+        <link href="/static/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="/static/assets/css/jquery-ui.min.css" rel="stylesheet">
+        <link href="/static/assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+        <link href="/static/assets/css/metisMenu.min.css" rel="stylesheet" type="text/css" />
+        <link href="/static/assets/css/app.min.css" rel="stylesheet" type="text/css" />
+
+    </head>
+
+    <body>
+        
+         <!-- Top Bar Start -->
+         <div class="topbar">
+
+            <!-- LOGO -->
+            <div class="topbar-left">
+                <a href="/dashboard/" class="logo">
+                    <!--span>
+                        <img src="assets/images/logo-sm.png" alt="logo-small" class="logo-sm">
+                    </span-->
+                    <a href="/dashboard/" class="logo logo-admin"><img src="/static/assets/images/logo-sm.png" height="55" alt="logo" class="auth-logo"></a>
+                </a>
+            </div>
+            <!--end logo-->
+            <!-- Navbar -->
+            <nav class="navbar-custom">    
+                <ul class="list-unstyled topbar-nav float-right mb-0"> 
+                    <li class="hidden-sm">
+                        <!--Languages to be commented until further notice - Tanooj Mehra
+                        <a class="nav-link dropdown-toggle waves-effect waves-light" data-toggle="dropdown" href="javascript: void(0);" role="button"
+                            aria-haspopup="false" aria-expanded="false">
+                            English <img src="assets/images/flags/us_flag.jpg" class="ml-2" height="16" alt=""/> <i class="mdi mdi-chevron-down"></i> 
+                        </a>                    
+                            <div class="dropdown-menu dropdown-menu-right">
+                            <a class="dropdown-item" href="javascript: void(0);"><span> German </span><img src="assets/images/flags/germany_flag.jpg" alt="" class="ml-2 float-right" height="14"/></a>
+                            <a class="dropdown-item" href="javascript: void(0);"><span> Italian </span><img src="assets/images/flags/italy_flag.jpg" alt="" class="ml-2 float-right" height="14"/></a>
+                            <a class="dropdown-item" href="javascript: void(0);"><span> French </span><img src="assets/images/flags/french_flag.jpg" alt="" class="ml-2 float-right" height="14"/></a>
+                            <a class="dropdown-item" href="javascript: void(0);"><span> Spanish </span><img src="assets/images/flags/spain_flag.jpg" alt="" class="ml-2 float-right" height="14"/></a>
+                            <a class="dropdown-item" href="javascript: void(0);"><span> Russian </span><img src="assets/images/flags/russia_flag.jpg" alt="" class="ml-2 float-right" height="14"/></a>
+                        </div>-->
+                    </li>
+
+                    <li class="dropdown notification-list">
+                        <!--Languages to be commented until further notice - Tanooj Mehra-->
+                        <a href="chat.html"class="nav-link dropdown-toggle arrow-none waves-light waves-effect" role="button" aria-haspopup="false" aria-expanded="false">
+                            <i class="mdi mdi-chat"></i>
+                            <span class="badge badge-warning badge-pill noti-icon-badge">2</span>
+                        </a>
+                        
+                    </li>
+
+                    <!-- Profile Dropdown -->
+                    <li class="dropdown">
+                        <a class="nav-link dropdown-toggle waves-effect waves-light nav-user" data-toggle="dropdown" href="#" role="button"
+                            aria-haspopup="false" aria-expanded="false">
+                            <img src="/static/assets/images/users/user-1.png" alt="profile-user" class="rounded-circle" />
+                            <span class="ml-1 nav-user-name hidden-sm">John Doe<i class="mdi mdi-chevron-down"></i> </span>
+                        </a>
+                        <!--<div class="dropdown-menu dropdown-menu-right">
+                            <a class="dropdown-item" href="doctor-profile.html"><i class="ti-user text-muted mr-2"></i> Profile</a>
+                            <a class="dropdown-item" href="#"><i class="ti-wallet text-muted mr-2"></i> My Wallet</a>
+                            <a class="dropdown-item" href="#"><i class="ti-settings text-muted mr-2"></i> Settings</a>
+                            <a class="dropdown-item" href="#"><i class="ti-lock text-muted mr-2"></i> Lock screen</a>
+                            <div class="dropdown-divider mb-0"></div>
+                            <a class="dropdown-item" href="#"><i class="ti-power-off text-muted mr-2"></i> Logout</a>
+                        </div>-->
+                    </li>
+                    <!-- End of Profile Dropdown -->
+
+                </ul><!--end topbar-nav-->
+    
+                <ul class="list-unstyled topbar-nav mb-0">                        
+                    <li>
+                        <button class="nav-link button-menu-mobile waves-effect waves-light">
+                            <i class="ti-menu nav-icon"></i>
+                        </button>
+                    </li>
+                    <li class="hide-phone app-search">
+                        <form role="search" class="">
+                            <input type="text" id="AllCompo" placeholder="Search..." class="form-control">
+                            <a href=""><i class="fas fa-search"></i></a>
+                        </form>
+                    </li>
+                </ul>
+            </nav>
+            <!-- end navbar-->
+        </div>
+        <!-- Top Bar End -->
+
+        
+        <!-- Left Sidenav -->
+        <div class="left-sidenav">
+            <ul class="metismenu left-sidenav-menu">
+                <li>
+                    <a href="/dashboard/"><i class="ti-bar-chart"></i><span>Dashboard</span></a>
+                    <!-- 
+                    <ul class="nav-second-level" aria-expanded="false">
+                        <li class="nav-item"><a class="nav-link" href="dashboard/analytics-index.html"><i class="ti-control-record"></i>Analytics</a></li>
+                        <li class="nav-item"><a class="nav-link" href="dashboard/crm-index.html"><i class="ti-control-record"></i>CRM</a></li>
+                        <li class="nav-item"><a class="nav-link" href="dashboard/helpdesk-index.html"><i class="ti-control-record"></i>Helpdesk</a></li>
+                        <li class="nav-item"><a class="nav-link" href="dashboard/sales-index.html"><i class="ti-control-record"></i>Sales</a></li> 
+                    </ul> -->
+                </li>
+
+                <li>
+                    <a href="finance.html"><i class="ti-server"></i><span>Finance</span><span class="menu-arrow"><i class="mdi mdi-chevron-right"></i></span></a>
+                    <ul class="nav-second-level" aria-expanded="false">
+                        <!--li>
+                            <a href="view-patient.html"><i class="ti-control-record"></i></i></a>
+                        </li-->
+                        <!--li class="nav-item"><a class="nav-link" href="add-patients.html"><i class="ti-control-record"></i>Add a Patient</a></li>-->
+                    </ul>
+                </li>                 
+
+                <li>    
+                    <a href="#"><i class="ti-crown"></i><span>Human Resource</span><span class="menu-arrow"><i class="mdi mdi-chevron-right"></i></span></a>
+                    <ul class="nav-second-level" aria-expanded="false">
+                        <li>
+                            <a href="/add_emp_form/"><i class="ti-control-record"></i>Add Employee</a>
+                        </li>
+                        <li>
+                            <a href="/Add_Employee_Skill/"><i class="ti-control-record"></i>Add Employee Skill</a>
+                        </li>
+                        <li>
+                            <a href="/view_skill_chart/"><i class="ti-control-record"></i>Skill Chart</a>
+                        </li>
+                    </ul>                        
+                </li>
+
+                <li>
+                    <a href="/sentiment/"><i class="ti-layers-alt"></i><span>Marketing</span><span class="menu-arrow"><i class="mdi mdi-chevron-right"></i></span></a>
+                    <!--ul class="nav-second-level" aria-expanded="false">
+                        <li class="nav-item"><a class="nav-link" href="specialist-list.html"><i class="ti-control-record"></i>View all Specialists</a></li>
+                        <li class="nav-item"><a class="nav-link" href="add-specialist.html"><i class="ti-control-record"></i>Add a Specialist</a></li>
+                    </ul-->
+                </li>
+                <li>   
+                    <a href="#"><i class="ti-crown"></i><span>Operations</span><span class="menu-arrow"><i class="mdi mdi-chevron-right"></i></span></a>
+                     <ul class="nav-second-level" aria-expanded="false">
+                    <li>
+                            <a href="/add_project/"><i class="ti-control-record"></i>Add Project</a>
+                        </li>
+                        <li>
+                            <a href="/add_job/"><i class="ti-control-record"></i>Add Job Details</a>
+                        </li>
+                        <li>
+                            <a href="/show_gantt_chart/"><i class="ti-control-record"></i>Gantt Chart</a>
+                        </li>
+                    </ul>
+                </li>
+
+            </ul>
+        </div>
+        <!-- end left-sidenav-->
+
+         <div class="page-wrapper">
+            <!-- Page Content-->
+            <div class="page-content">
+
+                <div class="container-fluid">
+                    <!-- Page-Title -->
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="page-title-box">
+                                <div class="float-right">
+                                    <ol class="breadcrumb">
+
+                                        <li class="breadcrumb-item active">Dashboard</a></li>
+                                    </ol>
+                                </div>
+                                <h4 class="page-title">Modules</h4>
+                            </div><!--end page-title-box-->
+                        </div><!--end col-->
+                    </div>
+                    <!-- end page title end breadcrumb -->
+                    <div class="row justify-content-center">
+                        <div class="col-md-6 col-lg-6">
+                            <div class="card report-card">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between">
+                                        <div>
+                                            <p class="text-dark font-weight-semibold font-20">Finance</p>
+                                            <!--<h3 class="my-3">24</h3>-->
+                                            <!--<p class="mb-0 text-truncate"><span class="text-success"><i class="mdi mdi-trending-up"></i>8.5%</span> New Sessions Today</p>-->
+                                        </div>
+                                        <div class="justify-content-between">
+                                            <br>
+                                            <!--<p class="text-white font-weight-semibold font-13">a</p>-->
+                                            <h3 class="my-3">
+                                                <span class="input-group-append ml-3">
+
+                                                    <input type="button" value="View" class="btn btn-gradient-primary" onclick="location.href='finance.html'">
+
+                                                </span>
+                                            </h3>
+                                        </div>
+                                        <!--<div class="align-self-center">
+                                            <i class="dripicons-user-group report-main-icon bg-soft-purple text-purple"></i>
+                                        </div>-->
+                                    </div>
+                                </div><!--end card-body-->
+                            </div><!--end card-->
+                        </div> <!--end col-->
+                        <div class="col-md-6 col-lg-6">
+                            <div class="card report-card">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between">
+                                        <div>
+                                            <p class="text-dark font-weight-semibold font-20">Human Resource</p>
+                                            <!--<h3 class="my-3">50</h3>-->
+                                            <!--<p class="mb-0 text-truncate"><span class="text-success"><i class="mdi mdi-trending-up"></i>1.5%</span> Weekly Avg.Sessions</p>-->
+                                        </div>
+                                        <div class="justify-content-between">
+                                            <br>
+                                            <!--<p class="text-white font-weight-semibold font-13"></p>-->
+                                            <h3 class="my-3">
+                                                <span class="input-group-append ml-3">
+                                                    <input type="button" value="View" class="btn btn-gradient-primary" onclick="location.href='hr.html'">
+                                                </span>
+                                            </h3>
+                                        </div>
+                                        <!--<div class="align-self-center">
+                                            <i class="dripicons-clock report-main-icon bg-soft-danger text-danger"></i>
+                                        </div>-->
+                                    </div>
+                                </div><!--end card-body-->
+                            </div><!--end card-->
+                        </div> <!--end col-->
+                        <!--(div class="col-md-6 col-lg-4">
+                            <div class="card report-card">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between">
+                                        <div>
+                                            <p class="text-dark font-weight-semibold font-14">Tasks</p>
+                                            <h3 class="my-3">15</h3>
+                                            <!--<p class="mb-0 text-truncate"><span class="text-success"><i class="mdi mdi-trending-up"></i>10.5%</span> Completions Weekly</p>--
+                                        </div>
+                                        <div class="justify-content-between">
+                                            <br>
+                                            <!--<p class="text-white font-weight-semibold font-13">a</p>--
+                                            <h3 class="my-3">
+                                                <span class="input-group-append ml-3">
+                                                    <input type="button" value="View List" class="btn btn-gradient-primary" onclick="location.href='important-tasks-part-2.html'"></input>
+                                                </span>
+                                            </h3>
+                                        </div>
+                                        <!--div class="justify-content-between">
+                                            <br>
+                                            <!--<p class="text-white font-weight-semibold font-13">a</p>--
+                                            <h3 class="my-3">
+                                                <span class="input-group-append ml-3">
+                                                    <input type="button" value="Add Task" class="btn btn-gradient-primary" onclick="location.href='add-imp-task.html'"></input>
+                                                </span>
+                                            </h3>
+                                        </div>
+                                        <div class="align-self-center">
+                                            <i class="dripicons-wallet report-main-icon bg-soft-warning text-warning"></i>
+                                        </div>--
+                                    </div>
+                                </div><!--end card-body--
+                            </div><!--end card--
+                        </div> <!--end col-->
+                    </div><!--end row-->
+                    <div class="row justify-content-center">
+                        <div class="col-md-6 col-lg-6">
+                            <div class="card report-card">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between">
+                                        <div>
+                                            <p class="text-dark font-weight-semibold font-20">Marketing</p>
+                                            <!--<h3 class="my-3">24</h3>-->
+                                            <!--<p class="mb-0 text-truncate"><span class="text-success"><i class="mdi mdi-trending-up"></i>8.5%</span> New Sessions Today</p>-->
+                                        </div>
+                                        <div class="justify-content-between">
+                                            <br>
+                                            <!--<p class="text-white font-weight-semibold font-13">a</p>-->
+                                            <h3 class="my-3">
+                                                <span class="input-group-append ml-3">
+                                                    <input type="button" value="View" class="btn btn-gradient-primary" onclick="location.href='marketing.html'">
+                                                </span>
+                                            </h3>
+                                        </div>
+                                        <!--<div class="align-self-center">
+                                            <i class="dripicons-user-group report-main-icon bg-soft-purple text-purple"></i>
+                                        </div>-->
+                                    </div>
+                                </div><!--end card-body-->
+                            </div><!--end card-->
+                        </div> <!--end col-->
+                        <div class="col-md-6 col-lg-6">
+                            <div class="card report-card">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between">
+                                        <div>
+                                            <p class="text-dark font-weight-semibold font-20">Operations</p>
+                                            <!--<h3 class="my-3">50</h3>-->
+                                            <!--<p class="mb-0 text-truncate"><span class="text-success"><i class="mdi mdi-trending-up"></i>1.5%</span> Weekly Avg.Sessions</p>-->
+                                        </div>
+                                        <div class="justify-content-between">
+                                            <br>
+                                            <!--<p class="text-white font-weight-semibold font-13"></p>-->
+                                            <h3 class="my-3">
+                                                <span class="input-group-append ml-3">
+                                                    <input type="button" value="View" class="btn btn-gradient-primary" onclick="location.href='operations.html'">
+                                                </span>
+                                            </h3>
+                                        </div>
+                                        <!--<div class="align-self-center">
+                                            <i class="dripicons-clock report-main-icon bg-soft-danger text-danger"></i>
+                                        </div>-->
+                                    </div>
+                                </div><!--end card-body-->
+                            </div><!--end card-->
+                        </div> <!--end col-->
+
+                        <!--<div class="col-md-6 col-lg-6">
+                            <div class="card report-card">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between">
+                                        <div>
+                                            <p class="text-dark font-weight-semibold font-14">Tasks</p>
+                                            <h3 class="my-3">15</h3>
+                                            <!--<p class="mb-0 text-truncate"><span class="text-success"><i class="mdi mdi-trending-up"></i>10.5%</span> Completions Weekly</p>
+                                        </div>
+                                        <div class="justify-content-between">
+                                            <br>
+                                            <!--<p class="text-white font-weight-semibold font-13">a</p>--
+                                            <h3 class="my-3">
+                                                <span class="input-group-append ml-3">
+                                                    <input type="button" value="View List" class="btn btn-gradient-primary" onclick="location.href='important-tasks-part-2.html'"></input>
+                                                </span>
+                                            </h3>
+                                        </div>
+                                        <!--div class="justify-content-between">
+                                            <br>
+                                            <!--<p class="text-white font-weight-semibold font-13">a</p>--
+                                            <h3 class="my-3">
+                                                <span class="input-group-append ml-3">
+                                                    <input type="button" value="Add Task" class="btn btn-gradient-primary" onclick="location.href='add-imp-task.html'"></input>
+                                                </span>
+                                            </h3>
+                                        </div>
+                                        <div class="align-self-center">
+                                            <i class="dripicons-wallet report-main-icon bg-soft-warning text-warning"></i>
+                                        </div>--
+                                    </div>
+                                </div><!--end card-body--
+                            </div><!--end card--
+                        </div>--> <!--end col-->
+                    </div><!--end row-->
+
+
+                </div><!-- container -->
+
+                <footer class="footer text-center text-sm-left">
+                    &copy; MAS
+                </footer><!--end footer-->
+            </div>
+            <!-- end page content -->
+        </div>
+        <!-- end page-wrapper -->
+
+
+
+
+        <!-- jQuery  -->
+        <script src="/static/assets/js/jquery.min.js"></script>
+        <script src="/static/assets/js/bootstrap.bundle.min.js"></script>
+        <script src="/static/assets/js/metismenu.min.js"></script>
+        <script src="/static/assets/js/waves.js"></script>
+        <script src="/static/assets/js/feather.min.js"></script>
+        <script src="/static/assets/js/jquery.slimscroll.min.js"></script>
+        <script src="/static/assets/js/jquery-ui.min.js"></script>
+
+        <script src="/static/plugins/apexcharts/apexcharts.min.js"></script>
+        <script src="/static/plugins/moment/moment.js"></script>
+        <script src="/static/plugins/jvectormap/jquery-jvectormap-2.0.2.min.js"></script>
+        <script src="/static/plugins/jvectormap/jquery-jvectormap-us-aea-en.js"></script>
+        <script src="/static/assets/pages/jquery.analytics_dashboard.init.js"></script>
+
+        <!-- App js -->
+        <script src="/static/assets/js/app.js"></script>
+
+    </body>
+
+</html>

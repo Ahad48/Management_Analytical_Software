@@ -1,0 +1,42 @@
+{% extends 'login/base.html' %}
+ {% block title %}
+View Sentiment Result
+{% endblock %}
+{% block content %}
+
+<!-- Page-Title -->
+					<div class="row">
+                        <div class="col-sm-12">
+                            <div class="page-title-box">
+                                <div class="float-right">
+                                    <ol class="breadcrumb">
+                                        <li class="breadcrumb-item"><a href="/dashboard/">Dashboard</a></li>
+                                        <li class="breadcrumb-item"><a href="javascript:void(0);">Human Resource</a></li>
+                                        <li class="breadcrumb-item"><a href="javascript:void(0);">Employee</a></li>
+                                        <li class="breadcrumb-item active">Add Skill</a></li>
+                                    </ol>
+                                </div>
+                                <h4 class="page-title">Sentiment analysis</h4>
+                            </div><!--end page-title-box-->
+                        </div><!--end col-->
+                    </div>
+					<div class="row justify-content-center">
+						<div class="col-md-12 col-lg-12">
+                            <div class="card report-card">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between">
+
+										<br>
+
+										<div class="container">
+											{% if company_table %}
+                                            {{ company_table|safe }}
+                                            {% endif %}
+										</div>
+										 </div>
+                                </div><!--end card-body-->
+                            </div><!--end card-->
+                        </div> <!--end col-->
+					</div>
+
+{% endblock %}

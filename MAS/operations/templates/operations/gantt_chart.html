@@ -1,0 +1,51 @@
+{% extends 'login/base.html' %}
+
+ {% block title %}
+ Gantt Chart
+{% endblock %}
+
+{% block content %}
+
+					<div class="row">
+                        <div class="col-sm-12">
+                            <div class="page-title-box">
+                                <div class="float-right">
+                                    <ol class="breadcrumb">
+                                        <li class="breadcrumb-item"><a href="/dashboard/">Dashboard</a></li>
+                                        <li class="breadcrumb-item"><a href="javascript:void(0);">Operations</a></li>
+                                        <li class="breadcrumb-item"><a href="javascript:void(0);">Jobs</a></li>
+                                        <li class="breadcrumb-item active">View Gantt Chart</a></li>
+                                    </ol>
+                                </div>
+                                <h4 class="page-title">View Project Gantt Chart</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center">
+						<div class="col-md-12 col-lg-12">
+                            <div class="card report-card">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between">
+
+
+                                        <div class="container">
+                                         <form method="GET" class="form-group" id="jobChart" novalidate>
+                                                    {% csrf_token %}
+                                                        <br>
+                                                        {{ query_filter.form }}
+                                                        <input type="submit" value="Search" onclick="ViewGraph()"
+                                                        class="btn btn-gradient-primary">
+                                                </form>
+                                           <div>
+                                           {% if graph %}
+                                            {{ graph|safe }}
+                                            {% endif %}
+                                            </div>
+                                        </div>
+                                       </div>
+                                </div>
+                            </div>
+                        </div>
+					</div>
+
+{% endblock %}
