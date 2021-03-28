@@ -19,7 +19,7 @@ config = Config()
 config.browser_user_agent = user_agent
 
 #  News API KEY
-apiKey = '4a6f71e77ab145b19ced3e03826d0184'
+apiKey = '9e33b380b35543bf85a8d249bd209fd4'
 
 
 def loading_model():
@@ -148,22 +148,19 @@ def get_article(url):
     return article.text
 
 
-def search_entity(entity, language='en', apiKey=apiKey):
-    # Send a REST request, more parameters can be added
-    search = f"https://newsapi.org/v2/top-headlines?q={entity}&language={language}&apiKey={apiKey}"
-    articles_api = requests.get(search).json()
-    print(entity)
-    print(search)
-
-    # Converting the articles into a dataframe
-    articles_df = pd.DataFrame.from_dict(articles_api.get('articles'))
-    try:
-        articles_df['Text'] = articles_df['url'].apply(get_article)
-        articles_df['Clean_text'] = articles_df['Text'].apply(clean_text)
-
-    except:
-        articles_df['Clean_text'] = articles_df['content'].apply(clean_text)
-    return articles_df
+def search_entity(entity,language = 'en',apiKey = apiKey):
+  #Send a REST request, more parameters can be added
+  search = f"https://newsapi.org/v2/top-headlines?q={entity}&language={language}&apiKey={apiKey}"
+  articles_api = requests.get(search).json()
+  
+  #Converting the articles into a dataframe
+  articles_df = pd.DataFrame.from_dict(articles_api.get('articles'))
+  try:
+    articles_df['Text'] = articles_df.url.apply(get_article)
+    articles_df['Clean_text'] = articles_df.Text.apply(clean_text)
+  except:
+    articles_df['Clean_text'] = articles_df.content.apply(clean_text)
+  return articles_df
 
 
 def articles(entity):
