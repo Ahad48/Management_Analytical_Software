@@ -1,8 +1,10 @@
 from django.shortcuts import render
 from .Sentiment import articles
 from .forms import SearchCompanyForm
+from django.contrib.auth.decorators import login_required
 
 
+@login_required
 def get_company(request):
     if request.method == 'POST':
         form = SearchCompanyForm(request.POST)

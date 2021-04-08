@@ -14,7 +14,7 @@ admin.site.register(Department, DepartmentAdmin)
 
 
 class EmployeeAdmin(admin.ModelAdmin):
-    list_display = ['employee_id', 'employee_name', 'department_name', 'performance_score', 'error', 'comments']
+    list_display = ['employee_id', 'employee_name', 'department_name', 'performance_score', 'error', 'certification']
 
     def get_queryset(self, request):
         queryset = super(EmployeeAdmin, self).get_queryset(request)

@@ -11,4 +11,4 @@ class AddEmployeeSkillScore(ModelForm):
 class AddEmployee(ModelForm):
     class Meta:
         model = Employee
-        fields = ['department_name', 'employee_id', 'employee_name', 'performance_score', 'error', 'comments']
+        fields = ['department_name', 'employee_id', 'employee_name', 'performance_score', 'error', 'certification']

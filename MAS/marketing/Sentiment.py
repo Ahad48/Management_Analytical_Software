@@ -13,8 +13,11 @@ import nltk
 import re
 from newspaper import Article
 from newspaper import Config
+from os import path
+import os
 
-user_agent = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36'
+
+user_agent = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.90 Safari/537.36'
 config = Config()
 config.browser_user_agent = user_agent
 
@@ -24,16 +27,17 @@ apiKey = '9e33b380b35543bf85a8d249bd209fd4'
 
 def loading_model():
     # loading Model
-    model = load_model('/static/marketing_models/model.h5')
+    #  print(os.path.abspath("model.h5"))
+    model = load_model('./marketing/model.h5')
     print("Model Loaded...")
 
     # loading Vectorizer
-    with open('/static/marketing_models/vectorizer.pickle', 'rb') as handle:
+    with open('./marketing/vectorizer.pickle', 'rb') as handle:
         vectorizer = pickle.load(handle)
         print("Vectorizer Loaded...")
 
     # loading Feature Selector
-    with open('/static/marketing_models/selector.pickle', 'rb') as handle:
+    with open('./marketing/selector.pickle', 'rb') as handle:
         selector = pickle.load(handle)
         print("Feature Selector Loaded...")
     return model, vectorizer, selector
@@ -73,10 +77,10 @@ def get_wordnet_pos(word):
 
 
 def clean_text(text, lemmatizer_active=True):
-    """ 
+    """
         Input: String
-        Output: String with punctuations and numbers removed 
-        
+        Output: String with punctuations and numbers removed
+
         This is the version 2 of the clean_text function previously created.
     """
 
@@ -148,19 +152,19 @@ def get_article(url):
     return article.text
 
 
-def search_entity(entity,language = 'en',apiKey = apiKey):
-  #Send a REST request, more parameters can be added
-  search = f"https://newsapi.org/v2/top-headlines?q={entity}&language={language}&apiKey={apiKey}"
-  articles_api = requests.get(search).json()
-  
-  #Converting the articles into a dataframe
-  articles_df = pd.DataFrame.from_dict(articles_api.get('articles'))
-  try:
-    articles_df['Text'] = articles_df.url.apply(get_article)
-    articles_df['Clean_text'] = articles_df.Text.apply(clean_text)
-  except:
-    articles_df['Clean_text'] = articles_df.content.apply(clean_text)
-  return articles_df
+def search_entity(entity, language='en', apiKey=apiKey):
+    # Send a REST request, more parameters can be added
+    search = f"https://newsapi.org/v2/top-headlines?q={entity}&language={language}&apiKey={apiKey}"
+    articles_api = requests.get(search).json()
+
+    # Converting the articles into a dataframe
+    articles_df = pd.DataFrame.from_dict(articles_api.get('articles'))
+    try:
+        articles_df['Text'] = articles_df.url.apply(get_article)
+        articles_df['Clean_text'] = articles_df.Text.apply(clean_text)
+    except:
+        articles_df['Clean_text'] = articles_df.content.apply(clean_text)
+    return articles_df
 
 
 def articles(entity):

@@ -13,7 +13,7 @@
                                     <ol class="breadcrumb">
                                         <li class="breadcrumb-item"><a href="/dashboard/">Dashboard</a></li>
                                         <li class="breadcrumb-item"><a href="javascript:void(0);">Operations</a></li>
-                                        <li class="breadcrumb-item"><a href="javascript:void(0);">Jobs</a></li>
+                                        <li class="breadcrumb-item"><a href="/add_job/">Jobs</a></li>
                                         <li class="breadcrumb-item active">View Gantt Chart</a></li>
                                     </ol>
                                 </div>
@@ -33,7 +33,7 @@
                                                     {% csrf_token %}
                                                         <br>
                                                         {{ query_filter.form }}
-                                                        <input type="submit" value="Search" onclick="ViewGraph()"
+                                                        <input type="submit" value="Search" name="Search"
                                                         class="btn btn-gradient-primary">
                                                 </form>
                                            <div>

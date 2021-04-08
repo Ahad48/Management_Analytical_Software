@@ -16,7 +16,7 @@ class Employee(models.Model):
     department_name = models.ForeignKey(Department, on_delete=models.CASCADE, default="")
     performance_score = models.FloatField()
     error = models.FloatField()
-    comments = models.TextField(blank=True)
+    certification = models.TextField(blank=True)
 
     def __str__(self):
         return self.employee_id

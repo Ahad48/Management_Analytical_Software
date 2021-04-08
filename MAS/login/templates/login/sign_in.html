@@ -59,12 +59,13 @@
 
                                         <div class="form-group">
                                             {% csrf_token %}
+
                                             <label for="username">Username</label>
                                             <div class="input-group mb-3">
                                                 <span class="auth-form-icon">
                                                     <i class="dripicons-user"></i>
                                                 </span>
-                                                <input type="text" class="form-control" id="username" name= "username" placeholder="Enter username" required>
+                                                <input type="text" class="form-control" id="username" name= "username" placeholder="Enter username" required id="id_username">
                                             </div>
                                         </div><!--end form-group-->
 
@@ -74,7 +75,7 @@
                                                 <span class="auth-form-icon">
                                                     <i class="dripicons-lock"></i>
                                                 </span>
-                                                <input type="password" class="form-control" id="password" name="password" placeholder="Enter password" required>
+                                                <input type="password" class="form-control" id="password" name="password" placeholder="Enter password" required id="id_password">
                                             </div>
                                         </div><!--end form-group-->
 

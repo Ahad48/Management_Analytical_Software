@@ -57,26 +57,22 @@
                 <ul class="list-unstyled topbar-nav float-right mb-0">
 
 
-                    <li class="dropdown notification-list">
-                        <!--Languages to be commented until further notice - Tanooj Mehra-->
-                        <a href="chat.html"class="nav-link dropdown-toggle arrow-none waves-light waves-effect" role="button" aria-haspopup="false" aria-expanded="false">
-                            <i class="mdi mdi-chat"></i>
-                            <span class="badge badge-warning badge-pill noti-icon-badge">2</span>
-                        </a>
 
-                    </li>
 
                     <!-- Profile Dropdown -->
                     <li class="dropdown">
                         <a class="nav-link dropdown-toggle waves-effect waves-light nav-user" data-toggle="dropdown" href="#" role="button"
                             aria-haspopup="false" aria-expanded="false">
                             <img src="/static/assets/images/users/user-1.png" alt="profile-user" class="rounded-circle" />
-                            <span class="ml-1 nav-user-name hidden-sm">John Doe<i class="mdi mdi-chevron-down"></i> </span>
+                            <span class="ml-1 nav-user-name hidden-sm">{{ user }}<i class="mdi mdi-chevron-down"></i> </span>
                         </a>
 
                     </li>
                     <!-- End of Profile Dropdown -->
-
+                        <a class="nav-link dropdown-toggle waves-effect waves-light nav-user" href="/logout/" role="button"
+                            aria-haspopup="false" aria-expanded="false">
+                             Logout
+                         </a>
                 </ul><!--end topbar-nav-->
 
                 <ul class="list-unstyled topbar-nav mb-0">
@@ -105,9 +101,14 @@
                 </li>
 
                 <li>
-                    <a href="finance.html"><i class="ti-server"></i><span>Finance</span><span class="menu-arrow"><i class="mdi mdi-chevron-right"></i></span></a>
+                    <a href="#"><i class="ti-server"></i><span>Finance</span><span class="menu-arrow"><i class="mdi mdi-chevron-right"></i></span></a>
                     <ul class="nav-second-level" aria-expanded="false">
-
+                        <li>
+                            <a href="/foreign_exchange/"><i class="ti-control-record"></i>Foreign Exchange</a>
+                        </li>
+                        <li>
+                            <a href="/stock_prediction/"><i class="ti-control-record"></i>Stock Prediction</a>
+                        </li>
                     </ul>
                 </li>
 

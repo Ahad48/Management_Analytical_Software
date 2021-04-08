@@ -22,11 +22,14 @@ from django.contrib.auth import views as auth_views
 from hr import views as hr_views
 from operations import views as op_views
 from marketing import views as mk_views
+from finance import views as f_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('accounts/', include('allauth.urls')),
     path('register/', user_views.register, name='register'),
     path("sign_in/", auth_views.LoginView.as_view(template_name="login/sign_in.html"), name='sign_in'),
+    path('logout/', auth_views.LogoutView.as_view(template_name='login/logout.html'), name='logout'),
     path('dashboard/', user_views.dashboard, name='dashboard'),
     path("Add_Employee_Skill/", hr_views.AddEmployeeSkillScoreView.as_view(), name="add_employee_skill"),
     path("view_skill_chart/", hr_views.generate_skill_chart, name='view_skill_chart'),
@@ -35,4 +38,6 @@ urlpatterns = [
     path("sentiment/", mk_views.get_company, name="sentiment"),
     path("add_project/", op_views.AddProjectDetailsView.as_view(), name="add_project"),
     path("add_job/", op_views.AddJobDetailsView.as_view(), name="add_job"),
+    path("foreign_exchange/", f_views.foreign_exchange, name="foreign_exchange"),
+    path("stock_prediction/", f_views.stock_prediction, name="stock_prediction"),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
